@@ -1,0 +1,233 @@
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../assets/css/fileupload.css" />
+<link rel="stylesheet" href="../assets/css/styles.css" />
+
+<section style="margin-top: 19px;">
+  <div class="container" style="padding: -1px;">
+    <div class="row">
+      <div
+        class="col d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center align-items-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center"
+        style="font-size: 30px;text-align: left;background: #ed0b93;padding: 22px;height: 199px;"
+      >
+        <div><img
+            src="../assets/img/The%20email%20processor%20(1).png"
+            width="100%"
+            height="100%"
+            style="height: 274px;width: 302px;"
+          /></div>
+      </div>
+      <div
+        class="col d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-start justify-content-sm-end align-items-sm-end justify-content-md-end align-items-md-end justify-content-lg-end align-items-lg-end justify-content-xl-end align-items-xl-end justify-content-xxl-end align-items-xxl-end"
+      >
+        <div style="text-align: right;"><a
+            class="btn btn-primary border rounded-0"
+            role="button"
+            style="background: rgb(14,43,64);"
+            href="/"
+          >Logout</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+{{! TO PROCESS LOGS }}
+<form action="dashboard/email" method="POST" enctype="multipart/form-data">
+  <section style="background: #e6e5e5;margin-top: 46px;">
+    <div class="container" style="padding: 92px;">
+      <div class="row">
+        <div class="col">
+          <div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <!-- Start: Drag Drop File Input Upload -->
+          <p>File support: .xlsx,.xlsm,.xlsb,.xltx,.xml,.csv,.json</p>
+          <div class="files color form-group mb-3">
+            <input
+              name="emails"
+              class="d-flex justify-content-center"
+              multiple="true"
+              type="file"
+              accept=".xlsx,.xlsm,.xlsb,.xltx,.xml,.csv,.json"
+              name="file"
+              style="padding: 125px 0px 85px 59.1406px;.invisible {visibility: hidden !important;}"
+            />
+
+          </div><!-- End: Drag Drop File Input Upload -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="margin-top: 29px;">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div>
+            <p
+              style="font-size: 47px;font-weight: bold;color: var(--bs-gray-900);"
+            >Select template</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-4 col-md-4">
+          <div>
+            TEMPLATE 1
+
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-md-4">
+          <div>
+            TEMPLATE 2
+
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-md-4">
+          <div>
+            TEMPLATE 3
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div
+            class="d-flex d-xxl-flex justify-content-end justify-content-xxl-end"
+          ><button
+              class="btn btn-primary border rounded-0"
+              type="submit"
+              style="background: rgb(14,43,64);" onclick="sendMessage()"
+            >Process</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+
+{{! Email }}
+<section style="margin-top: 35px;background: #f9f9f9;">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p style="font-size: 47px;font-weight: bold;">Processing Logs</p>
+        <div></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>time stamp</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>something@ekbana.com</td>
+                  <td>[2019:9090:9090]</td>
+                  <td
+                    style="color: rgb(32,197,29);font-weight: bold;"
+                  >Completed</td>
+                  <td style="color: rgb(32,197,29);font-weight: bold;"><select
+                      class="border rounded-0 form-select-sm"
+                      style="background: rgb(22,69,103);color: rgb(255,255,255);padding: 8px 0px 4px 8px;padding-right: 7px;padding-top: 6px;padding-bottom: 9px;"
+                    >
+                      <option value="12" selected="">view</option>
+                      <option value="13">retry</option>
+                    </select><button
+                      class="btn btn-primary border rounded-0"
+                      type="button"
+                      data-bs-target="#modal-1"
+                      data-bs-toggle="modal"
+                    >click&nbsp;</button></td>
+                </tr>
+                <tr>
+                  <td>something@ekbana.com</td>
+                  <td>[2019:9090:9090]</td>
+                  <td
+                    style="color: rgb(197,39,29);font-weight: bold;"
+                  >Error</td>
+                  <td style="color: rgb(32,197,29);font-weight: bold;"><select
+                      class="border rounded-0 form-select-sm"
+                      style="background: rgb(22,69,103);color: rgb(255,255,255);padding: 8px 0px 4px 8px;padding-right: 7px;padding-top: 6px;padding-bottom: 9px;"
+                    >
+                      <option value="12" selected="">view</option>
+                      <option value="13">retry</option>
+                    </select></td>
+                </tr>
+                <tr></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{! email articles }}
+<div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Email</h4><button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <article style="background: #e6e1e1;padding: 39px;">
+            <div>
+              <p>From : someone@ekbana.info</p>
+              <p>To : someone@ekbana.info</p>
+            </div>
+            <div>
+              <p style="margin-bottom: 8px;">Subject: this is test for test</p>
+            </div>
+            <div>
+              <p style="padding: 12px;">You’re nearly there!Hi hukum.gosain,To
+                finish setting up your account and start using Atlassian
+                products, confirm we’ve got the correct email for you.</p>
+            </div>
+            <p style="margin-bottom: 8px;">Thankyou regards&nbsp;</p>
+          </article>
+        </div>
+      </div>
+      <div class="modal-footer"><button
+          class="btn btn-light border rounded-0"
+          type="button"
+          data-bs-dismiss="modal"
+          style="background: rgb(237,16,16);color: rgb(255,255,255);"
+        >Delete</button><button
+          class="btn btn-light border rounded-0"
+          type="button"
+          data-bs-dismiss="modal"
+        >Close</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let ws = new WebSocket("ws://localhost:8090");
+  ws.onopen=function(e){
+      console.log(e)
+  }
+   function sendMessage(){
+      ws.send(JSON.stringify("start connection"));
+   }
+
+   ws.onmessage=function(e){
+      console.log(e)
+  }
+</script>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>

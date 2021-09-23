@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../assets/css/fileupload.css" />
+<link rel="stylesheet" href="../assets/css/styles.css" />
+
+<div class="container-fluid" style="width: 100%;margin-top: 30px;">
+    <div class="row d-flex justify-content-center align-items-center" style="height: 466px;">
+        <div class="col-12 col-lg-6 d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+            style="text-align: center;">
+            <div>
+                <p style="font-size: 28px;text-align: center;background: #ed0b93;padding: 36px;">Welcome to bulk email
+                    processing.&nbsp;<img src="../assets/img/The%20email%20processor%20(1).png" width="100%" height="50%"
+                        style="height: 469px;width: 472px;" /></p>
+                <p style="font-size: 28px;text-align: center;">Already registered
+                    ?&nbsp;<a href="/">Login</a>
+                    &nbsp;</p>
+            </div>
+        </div>
+        <div
+            class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-4 col-xxl-4 text-center d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center">
+            <div>
+                <div>
+                    <p class="text-center" style="font-size: 73px;font-weight: bold;height: 103px;">Signup</p>
+                </div>
+                <form style="padding: 4px;padding-top: 10px;" method="post" action="/dashboard/signup">
+                    <div>
+                        <input class="border rounded-0 border-dark form-control form-control-lg" type="text"
+                            placeholder="username" style="margin-bottom: 9px;" name="username" required />
+                            <input class="border rounded-0 border-dark form-control form-control-lg" type="email"
+                            placeholder="email" style="margin-bottom: 16px;" name="email" /><input
+                            class="border rounded-0 border-dark form-control form-control-lg" type="password"
+                            placeholder="password" style="margin-bottom: 16px;" name="password" required /><input
+                            class="border rounded-0 border-dark form-control form-control-lg" type="password"
+                            placeholder="confirm-password" style="margin-bottom: 16px;" confirm_name="password"
+                            required /><small class="form-text" style="margin-bottom: 18px;color: rgb(69,69,69);">OTP
+                            -check your email</small>
+                        {{!-- <div class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex align-items-center align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center justify-content-xxl-center align-items-xxl-center"
+                            style="padding: 0px;margin-bottom: 9px;transform: scale(0.90);"><input
+                                class="border rounded-0 border-dark form-control form-control-lg" type="text"
+                                style="margin-right: 5px;" pattern="[0-9]" /><input
+                                class="border rounded-0 border-dark form-control form-control-lg" type="text"
+                                style="margin-right: 4px;" pattern="[0-9]" /><input
+                                class="border rounded-0 border-dark form-control form-control-lg" type="text"
+                                style="margin-right: 7px;" pattern="[0-9]" /><input
+                                class="border rounded-0 border-dark form-control form-control-lg" type="text"
+                                pattern="[0-9]" /></div> --}}
+                    </div>
+                    <div class="text-center"><button class="btn btn-primary text-center border rounded-0" type="submit"
+                            style="background: rgb(18,52,92);width: 100%;padding: 10px 12px;">Signup</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
