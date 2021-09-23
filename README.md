@@ -1,12 +1,5 @@
 # Bulk Email Processor
-Initially, The bulk mail processor usage MVC(model, view, controller) to process emails. <br />
-tech used: <br />
-    nodejs-express,<br />
-    mongodb as a database<br />
-    express handelbars as a templating engine <br />
-    and all the required packages are inside package.json file at the root directory<br />
 
-main.js inside src is the gateway for our webapplication.
 
 # usage commands
 ```bash
